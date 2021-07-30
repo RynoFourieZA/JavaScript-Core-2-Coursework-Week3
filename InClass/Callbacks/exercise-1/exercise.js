@@ -13,5 +13,5 @@ Prefer to work on a codepen? https://codepen.io/makanti/pen/abOreLg
 */
 let colorBackground = document.getElementById("main");
 setTimeout(() => {
-    colorBackground.style.backgroundColor = " green";
+  colorBackground.style.backgroundColor = " green";
 }, 5000);
