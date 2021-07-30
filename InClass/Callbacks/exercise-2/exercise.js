@@ -62,9 +62,56 @@ const movies = [
 ];
 
 // create showMovies function
+// You are given the following list of movies
 
+// Task 1
+// Create a function called "showMovies" that
+// - iterates through the "movies" array and
+// - for each movie, it creates a <p> element with the movie title and director and append it to the #all-movies div.
+// - it sets the innerText of the #movies-number element to the total number of the movies in the array "movies"
+
+const showMovies = () => {
+   movies.forEach((movie) => {
+    let pEl = document.createElement("p");
+    pEl.innerText = `${movie.title} - ${movie.director}`;
+    let myMovies = document.querySelector("#all-movies");
+    myMovies.appendChild(pEl);
+  });
+
+  let movieNumber = document.querySelector("#movies-number");
+  movieNumber.innerHTML = `${movies.length}`;
+}
 
 // create a new movie object for your favorite movie
 
+let newMovie = {
+    title: "Mortal Kombat",
+    director: "Simon McQuoid",
+    type: "Fantasy",
+    haveWatched: true,
+}
+
+// Task 2
+// Amend your function above to only show movies after 1 second. Remember to use setTimeout to achieve that
+
+// setTimeout(() => {
+//   showMovies();
+// }, 1000);
+
+// Create a new function called "addMovie"
+// - it receives a movie object as an argument - your can create a new object for your favorite movie following using the "myMovies" objects as a guide 
+// - it adds the new movie to the list of movies after 2 seconds. Remember to setTimeout to achieve that
+// Call addMovies to add the new movie to the list and then showMovies to see the movies added on the screen.
+// How many movies can you see on your page?
 
 // create addMovies function
+
+let addMovies = (movie) => {
+  return setTimeout(() => {
+     movies.push(movie);
+    // showMovies(movie);
+  }, 2000);
+}
+console.log(addMovies(newMovie));
+addMovies(newMovie);
+// console.log(showMovies(movies));
